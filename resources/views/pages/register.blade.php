@@ -158,7 +158,7 @@
 
                     if (response.ok) {
                         localStorage.setItem('auth_token', result.access_token);
-                        window.location.href = '/login';
+                        window.location.href = '/auth/login';
                     } else {
                         if (result.errors) {
                             alert(Object.values(result.errors).flat().join('\n'));
