@@ -28,8 +28,9 @@ Route::prefix('auth')->group(function (){
         });
 
         Route::middleware('role:manager')->group(function (){
-            Route::get('/manager', fn () => view('manager.page'))->name('dashboard.manager');
-            Route::get('/manager/products', fn () => view('admin.users.index'))->name('admin.users');
+            Route::get('/manager', fn () => view('pages.manager'))->name('dashboard.manager');
+            Route::get('/manager/products', fn () => view('pages.manage_products'))
+                ->name('dashboard.manager_products');
         });
 
     });
